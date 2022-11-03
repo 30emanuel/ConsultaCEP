@@ -1,0 +1,49 @@
+header{
+    background-color: #3273dc;
+    color: white;
+    height: 50px;
+}
+header h2{
+    padding: 10px;
+    font-weight: 400;
+}
+main{
+    margin: 10px;
+    margin-top: 50px;
+}
+input{
+    width: 80%;
+    height: 20px;
+    padding: 10px;
+    border: 1px solid black;
+}
+button{
+    cursor: pointer;
+    background-color: #3273dc;
+    border: none;
+    color: white;
+    width: 100px;
+    font-weight: bolder;
+    margin-top: 10px;
+    height: 30px;
+}
+.res{
+    width: 80%;
+    margin-top: 10px;
+    font-weight: 400;
+    font-style: normal;
+}
+.res .header{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px 10px 0px 0px;
+    color: white;
+    background-color: #404040;
+}
+.res .body{
+    width: 100%;
+    padding: 10px;
+    background-color: lightgray;
+    color: #404040;
+    border-radius: 0px 0px 10px 10px;
+}

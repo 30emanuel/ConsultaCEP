@@ -1,0 +1,22 @@
+<header>
+    <h2>Consulta CEP</h2>
+</header>
+<main>
+    <form>
+        <input type="text" name="" id="" placeholder="Digite o CEP" maxlength="9" #input>
+    </form>
+    <button (click)="consultarCEP(input.value)">Pesquisar</button>
+    <article class="res" *ngIf="endereco">
+        <div class="header">
+            <p>CEP: <strong>{{endereco.cep}}</strong></p>
+        </div>
+        <div class="body">
+        <ul>
+            <li><strong>Estado:</strong> {{ endereco.uf }}</li>
+            <li><strong>Cidade:</strong> {{ endereco.localidade }}</li>
+            <li><strong>Bairro:</strong> {{ endereco.bairro }}</li>
+            <li><strong>Endereço:</strong> {{ endereco.logradouro }}</li>  
+        </ul>
+        </div>
+    </article>
+</main>
