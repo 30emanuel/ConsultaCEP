@@ -10,6 +10,7 @@ import { ViacepApiService } from 'src/app/services/viacep-api.service';
 export class HomeComponent implements OnInit{
 
   endereco!: Endereco;
+  errorApi: boolean = false
 
   constructor( private cepApi: ViacepApiService){}
 
@@ -17,9 +18,14 @@ export class HomeComponent implements OnInit{
   }
 
   public consultarCEP(cep: string){
-    this.cepApi.enderecoPorCep(cep).subscribe((endereco) => {
-      this.endereco = endereco;
-      console.log(this.endereco);
-    })
+    this.cepApi.enderecoPorCep(cep).subscribe(
+      res => {
+        this.endereco = res
+        this.errorApi = false
+      },
+      error =>{
+        this.errorApi = error
+      }
+    )
   }
 }

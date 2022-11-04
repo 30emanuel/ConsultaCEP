@@ -3,10 +3,10 @@
 </header>
 <main>
     <form>
-        <input type="text" name="" id="" placeholder="Digite o CEP" maxlength="9" #input>
+        <input type="text" name="zipcode" placeholder="Digite o CEP" maxlength="9" #input>
     </form>
     <button (click)="consultarCEP(input.value)">Pesquisar</button>
-    <article class="res" *ngIf="endereco">
+    <article class="res" *ngIf="endereco && !errorApi">
         <div class="header">
             <p>CEP: <strong>{{endereco.cep}}</strong></p>
         </div>
@@ -15,8 +15,17 @@
             <li><strong>Estado:</strong> {{ endereco.uf }}</li>
             <li><strong>Cidade:</strong> {{ endereco.localidade }}</li>
             <li><strong>Bairro:</strong> {{ endereco.bairro }}</li>
-            <li><strong>Endereço:</strong> {{ endereco.logradouro }}</li>  
+            <li><strong>Endereço:</strong> {{ endereco.logradouro }}</li> 
+            <li><strong>Complemento:</strong> {{ endereco.complemento }}</li> 
         </ul>
+        </div>
+    </article>
+    <article class="res erro" *ngIf="errorApi">
+        <div class="header">
+            <p>CEP: <strong>{{ input.value }}</strong></p>
+        </div>
+        <div class="body">
+            <p>Informe um CEP valido!</p>
         </div>
     </article>
 </main>

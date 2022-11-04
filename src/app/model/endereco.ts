@@ -3,5 +3,6 @@ export interface Endereco{
     logradouro: string,
     bairro: string,
     localidade: string,
-    uf: string
+    uf: string,
+    complemento: string
 }
